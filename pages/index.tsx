@@ -7,7 +7,9 @@ export default function Home() {
     try {
       const result = await window.Pi.authenticate(
         ['username', 'payments', 'wallet_address'],
-      (payment: any) => console.log('Incomplete Payment Found:', payment)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+(payment: any) => console.log('Incomplete Payment Found:', payment)
+
 
       );
       setUser(result.user);
