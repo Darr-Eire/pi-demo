@@ -7,7 +7,8 @@ export default function Home() {
     try {
       const result = await window.Pi.authenticate(
         ['username', 'payments', 'wallet_address'],
-        payment => console.log('Incomplete Payment Found:', payment)
+      (payment: any) => console.log('Incomplete Payment Found:', payment)
+
       );
       setUser(result.user);
       await fetch('/api/log-user', {
